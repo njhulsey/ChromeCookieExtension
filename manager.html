@@ -1,0 +1,123 @@
+<html>
+<head>
+
+<script src="manager.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+<style>
+
+
+
+.imageCell{
+
+}
+
+.domain-title{
+   display: block;
+  width: 150px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+
+#data-table td{
+
+}
+
+#footer{
+  padding-right: 2%;
+  padding-left: 2%;
+  padding-top:10%;
+  padding-bottom:5%;
+}
+tr{
+  padding-top: 2%;
+}
+
+</style>
+
+</head>
+<body id = "top" >
+  
+
+  <nav class = "navbar sticky-top navbar-dark" style="background-color: #b2dfdb; margin-bottom: 3%;">
+    <a class = "navbar-brand">Cookie Control Center</a>
+    <form class ="form-inline" id = "filter_div">
+      <a class = "btn btn-sm btn-secondary" href = "about.html" style="margin-right:15px;" >About</a>
+      <input class = "form-control mr-sm-2" id="filter"  placeholder="Search" aria-label="Search">
+      <button id = "filter_button" class = "btn btn-success my-2 my-sm-0" type="submit" >Clear</button>
+    </form>
+  </nav>
+
+  <div class = "container">
+
+
+    <div id = "lookup" class = "jumbotron">
+        <h3 id = "lookup-header" class = "display display-4">Please Lookup a Domain...</h3>
+        <hr>
+           
+        <div class = "row justify-content-between" style = "margin-top:2%;">
+            <div class = "col-sm-12 col-md-4 col-lg-4">
+                <img id = "lookup-image" class = "img-fluid rounded float-left" src = https://via.placeholder.com/200 style = "margin-right: 50%;">
+                <br>
+                <button  id = "inputRemove" class = "btn btn-sm btn-danger" style="margin-top:10%; margin-right: 3%;margin-bottom: ;" > Remove</button>
+                <button  id = "inputRemember" onclick = "updateSavedDomains()" class = "btn btn-sm btn-success" style="margin-top:10%; margin-bottom: ;" > Remember</button>
+            </div>
+            <div class = "col-sm-12 col-md-8 col-lg-8">
+                
+                <h4>How to use:</h4>
+                <hr>
+                <p>First, Search for and lookup a company with a cookie found on your computer. <br> Lookup will allow you to view all the data within each cookie. You can also Remove and Remember a cookie. Remembered cookies cannot be removed until forgotten. </p>
+            </div>
+        </div>
+      </div>
+
+      <div class = "row"> 
+        <div class = "jumbotron">
+          <h4>Cookies Found...</h4>
+            <table class = "table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">Name</th>
+                  <th scope="col">Secure</th>
+                  <th scope="col">Expiration</th>
+                  <th scope="col">Data</th>
+                </tr>
+              </thead>
+              <tbody id = "data-table">
+              </tbody>
+            </table>
+        </div>
+      </div>
+
+
+
+
+
+    <div class = "row">
+      <table id="cookies">
+      </table>
+    </div>
+
+
+</div>
+
+
+    <nav class = "navbar navbar-light"style="margin-top:;background-color: #e1f5fe;">
+
+        <div id="summary_div">
+          <div class="navbar-text"  >
+            Showing <span id="filter_count"></span> of <span id="total_count"></span> cookie domains
+            <span id="delete_all_button"></span>
+          </div>
+        </div>
+
+    </nav>
+
+</body>
+</html>
