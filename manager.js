@@ -184,10 +184,8 @@ function reloadCookieTable() {
     img.src = "https://logo.clearbit.com/"+ domain.substring(1);
     img.alt = domain;
     img.setAttribute("class", "card-img-top")
-    
-    
     img.onerror = function(){
-      this.src = "https://via.placeholder.com/150"
+      this.src = "200.png"
     }
 
     card.appendChild(img);
@@ -221,9 +219,13 @@ function reloadCookieTable() {
         document.getElementById("data-table").innerHTML = "";
 
         var lookupImage = document.getElementById("lookup-image");
+
+
+
         lookupImage.src = "https://logo.clearbit.com/"+ cookies[0].domain.substring(1);
         lookupImage.onerror = function(){
-              this.src = "https://via.placeholder.com/200"
+              this.src = "200.png"
+              //this.onerror = null;
         }
 
         var buttonR = document.getElementById("inputRemove");
@@ -361,7 +363,7 @@ function stopListening() {
 function onload() {
   var timer = new Timer();
   chrome.cookies.getAll({}, function(cookies) {
-    startListening();
+    //startListening();
     start = new Date();
     for (var i in cookies) {
       cache.add(cookies[i]);
