@@ -23,10 +23,44 @@
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+body {
+  background-color:#283747;
+}
+.lookupstyle {
+    background-color:#F3F3F3;
+}
 
 img
 {
 /*background-image:url('https://via.placeholder.com/150');*/
+}
+
+.btn-purple{
+  color:white;
+  background-color:#3C1874;
+}
+.btn-purple:hover{
+  color:white;
+  background-color:#5C3894;
+}
+
+.rem-cookie{
+  border-radius: 7px;
+  border: 6px solid #5C3894;
+}
+
+.btn-red{
+  color:white;
+  background-color:#DE354C;
+}
+.btn-red:hover{
+  color:white;
+  background-color:#BE152C;
+}
+.lock-image{
+  width:15%;
+  height:30%;
+  margin-left:10%;
 }
 
 #footer{
@@ -37,6 +71,11 @@ img
 }
 tr{
   padding-top: 2%;
+
+}
+td {
+  white-space: normal !important; 
+  word-wrap: break-word;  
 }
 
 </style>
@@ -45,57 +84,62 @@ tr{
 <body id = "top" >
   
 
-  <nav class = "navbar sticky-top navbar-dark" style="background-color: #b2dfdb; margin-bottom: 3%;">
-    <a class = "navbar-brand">Cookie Control Center</a>
+  <nav class = "navbar sticky-top navbar-dark" style="background-color: #932432; margin-bottom: 3%;">
+    <a class = "navbar-brand" href = "manager.html" style = " ">Cookie Control Center</a>
     <form class ="form-inline" id = "filter_div">
-      <a class = "btn btn-sm btn-secondary" href = "about.html" style="margin-right:15px;" >About</a>
+      <a class = "btn btn-purple " href = "about.html" style="margin-right:15px;" >About</a>
       <input class = "form-control mr-sm-2" id="filter"  placeholder="Search" aria-label="Search">
-      <button id = "filter_button" class = "btn btn-success my-2 my-sm-0" type="submit" >Clear</button>
+      <button id = "filter_button" class = "btn btn-red my-2 my-sm-0" type="submit" >Clear</button>
     </form>
   </nav>
 
   <div class = "container">
 
 
-    <div id = "lookup" class = "jumbotron">
-        <h3 id = "lookup-header" class = "display display-4">Please Lookup a Domain...</h3>
+    <div id = "lookup" class = "jumbotron lookupstyle">
+        <h1 id = "lookup-header" style ="" class = "display ">Please Lookup a Domain...</h1>
         <hr>
            
         <div class = "row justify-content-between" style = "margin-top:2%;">
             <div class = "col-sm-12 col-md-4 col-lg-4">
                 <img id = "lookup-image" class = "img-fluid rounded float-left" src = https://via.placeholder.com/200 style = "margin-right: 50%;">
                 <br>
-                <button  id = "inputRemove" class = "btn btn-sm btn-danger" style="margin-top:10%; margin-right: 3%;margin-bottom: ;" > Remove</button>
-                <button  id = "inputRemember" onclick = "updateSavedDomains()" class = "btn btn-sm btn-success" style="margin-top:10%; margin-bottom: ;" > Remember</button>
+                <button  id = "inputRemove" class = "btn btn-red" style="margin-top:10%; margin-right: 3%;margin-bottom: ;" > Remove</button>
+                <button  id = "inputRemember" onclick = "updateSavedDomains()" class = "btn btn-purple" style="margin-top:10%; margin-bottom:;" > Remember</button>
             </div>
             <div class = "col-sm-12 col-md-8 col-lg-8">
                 
                 <h4>How to use:</h4>
-                <hr>
                 <p>First, Search for and lookup a company with a cookie found on your computer. <br> Lookup will allow you to view all the data within each cookie. You can also Remove and Remember a cookie. Remembered cookies cannot be removed until forgotten. </p>
             </div>
         </div>
       </div>
 
       <div class = "row"> 
-        <div class = "jumbotron">
+        <div class = "jumbotron col-sm-12 col-md-12 col-lg-12 lookupstyle">
           <h4>Cookies Found...</h4>
-            <table class = "table table-striped">
-              <thead>
-                <tr>
-                  <th scope="col">Name</th>
-                  <th scope="col">Secure</th>
-                  <th scope="col">Expiration</th>
-                  <th scope="col">Data</th>
-                </tr>
-              </thead>
-              <tbody id = "data-table">
-              </tbody>
-            </table>
+                <table class = "table  table-responsive table-striped">
+                  <thead>
+                    <tr>
+                      <th scope="col">Name</th>
+                      <th scope="col">Secure</th>
+                      <th scope="col">Expiration</th>
+                      <th scope="col">Data</th>
+                    </tr>
+                  </thead>
+                  <tbody id = "data-table" class = "">
+                  </tbody>
+                </table>
         </div>
       </div>
 
 
+      <div class = "row">
+        <div class = "col-sm-12 col-lg-12 col-md-12">
+            <h4 class = "display-4" style= "color:white;">Websites Found...</h4>
+            <hr style = "background-color:white;"/>
+        </div>
+      </div>
 
 
 
@@ -108,12 +152,11 @@ tr{
 </div>
 
 
-    <nav class = "navbar navbar-light"style="margin-top:;background-color: #e1f5fe;">
+    <nav class = "navbar navbar-light"style="margin-top:;background-color: #932432;">
 
         <div id="summary_div">
-          <div class="navbar-text"  >
-            Showing <span id="filter_count"></span> of <span id="total_count"></span> cookie domains
-            <span id="delete_all_button"></span>
+          <div class="navbar-text "style= "color:white;" >
+            Showing <span id="filter_count"></span> of <span id="total_count"></span> cookie domains<span id="delete_all_button">  </span>
           </div>
         </div>
 

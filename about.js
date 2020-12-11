@@ -66,7 +66,7 @@ function onLoad(){
     
 
     var button = document.createElement("button");
-    button.setAttribute("class","btn btn-info")
+    button.setAttribute("class","btn btn-purple");
     button.setAttribute("style","margin-left:20px;margin-right:20px;margin-bottom:20px;")
     button.innerText = "Forget";
     button.onclick = (function(domain){

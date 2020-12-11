@@ -192,9 +192,10 @@ function reloadCookieTable() {
 
     var body = document.createElement("div");
     body.setAttribute("class","card-body");
+  
 
-    if(savedData && savedData.includes(domain))
-      body.setAttribute("style","background-color:#fff3c4;");
+    body.setAttribute("style","background-color:#F3F3F3;");
+
 
 
     var header = document.createElement('h5');
@@ -208,8 +209,8 @@ function reloadCookieTable() {
     body.appendChild(text);
 
     var button2 = document.createElement("button");
-    button2.setAttribute("class","btn btn-info")
-    button2.setAttribute("style","margin-left:20px;")
+    button2.setAttribute("class","btn");
+    button2.setAttribute("style","color:white;background-color:#3C1874;");
     button2.innerText = "lookup";
 
     button2.onclick = (function(dom){
@@ -320,6 +321,13 @@ function reloadCookieTable() {
 
     body.appendChild(button2);
     
+    if(savedData && savedData.includes(domain)){
+      var lock = document.createElement('img');
+      lock.src = "lock.png";
+      lock.setAttribute("class","lock-image");
+      body.appendChild(lock);
+    }
+
     card.appendChild(body);
     cardDeck.appendChild(card);  
 

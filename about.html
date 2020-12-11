@@ -13,6 +13,23 @@
 tr{
   padding-top: 2%;
 }
+.btn-purple{
+  color:white;
+  background-color:#3C1874;
+}
+.btn-purple:hover{
+  color:white;
+  background-color:#5C3894;
+}
+
+.btn-red{
+  color:white;
+  background-color:#DE354C;
+}
+.btn-red:hover{
+  color:white;
+  background-color:#BE152C;
+}
 
 .domain-title{
    display: block;
@@ -21,39 +38,41 @@ tr{
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+body {
+  background-color:#283747;
+}
 
 </style>
 
 </head>
-
 <body>
 	
 
 
 
-  <nav class = "navbar sticky-top navbar-dark" style="background-color: #b2dfdb; margin-bottom: 3%;">
-    <a class = "navbar-brand">Cookie Control Center</a>
+  <nav class = "navbar sticky-top navbar-dark" style="background-color: #932432; margin-bottom: 3%;">
+    <a class = "navbar-brand" href = "manager.html" style = "">Cookie Control Center</a>
     <form class ="form-inline" id = "filter_div">
-      <a class = "btn btn-sm btn-secondary" href = "about.html" style="margin-right:15px;" >About</a>
-      <a class = "btn btn-success my-2 my-sm-0" href = "manager.html">My Cookies</a>
+      <a class = "btn btn-purple" href = "about.html" style="margin-right:15px;" >About</a>
+      <a class = "btn btn-red my-2 my-sm-0" href = "manager.html">My Cookies</a>
     </form>
   </nav>
 
 <div class = "container">
 
-	<div class = "row jumbotron">
+	<div class = "row jumbotron " style = "background-color:#F3F3F3">
 		<h4 class = "display-4">About Cookie Control Center:</h4>
 		<div class = "col-sm-12 col-md-12 col-lg-12">
 		<hr>
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Iaculis nunc sed augue lacus viverra vitae congue eu. Massa eget egestas purus viverra accumsan in nisl nisi scelerisque. Eu mi bibendum neque egestas congue quisque egestas diam. Arcu dui vivamus arcu felis bibendum ut. Sed enim ut sem viverra. Leo in vitae turpis massa. Fermentum leo vel orci porta non. Gravida quis blandit turpis cursus in. Cras tincidunt lobortis feugiat vivamus at augue. Eget egestas purus viverra accumsan. Sit amet nulla facilisi morbi. Congue nisi vitae suscipit tellus mauris a diam maecenas. Feugiat nisl pretium fusce id. Leo urna molestie at elementum eu facilisis sed odio.</p>
-	  			<button  id = "removeCookies" class = "btn btn-sm btn-danger" style="margin-top:10%; margin-right: 3%;" > Forget All Cookies</button>
+	  			<button  id = "removeCookies" class = "btn btn-red" style="margin-top:10%; margin-right: 3%;" > Forget All Cookies</button>
   		</div>
 	</div>
 
     <div class = "row">
     	<div class = "col-sm-12 col-md-12 col-lg-12">
-			<h4 class = "display-4">Saved Cookies</h4>
-			<hr>
+			<h4 class = "display-4" style= "color:white;">Saved Cookies</h4>
+			<hr style = "background-color:white;">
 		</div>
 		<div class = "col-sm-12 col-md-12 col-lg-12">
 		      <table id="cookies">
