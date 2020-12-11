@@ -2,6 +2,8 @@
 
 function clearSavedCookies(){
     chrome.storage.local.set({"saved":""});
+    location.reload();
+
 }
 
 function onLoad(){
@@ -33,56 +35,57 @@ function onLoad(){
 	    }
 	    count+=1;
 
-    var cardDeck = row.insertCell(-1);
+	    var cardDeck = row.insertCell(-1);
 
-    //create main card div
-    var card = document.createElement("div");
-    card.setAttribute("class","card");
+	    //create main card div
+	    var card = document.createElement("div");
+	    card.setAttribute("class","card");
+	    card.setAttribute("style","width:12.2rem;");
 
-    var img = document.createElement('img');
-    img.src = "https://logo.clearbit.com/"+ domain.substring(1);
-    img.alt = domain;
-    img.setAttribute("class", "card-img-top")
-    
-    
-    img.onerror = function(){
-      this.src = "https://via.placeholder.com/150"
-    }
+	    var img = document.createElement('img');
+	    img.src = "https://logo.clearbit.com/"+ domain.substring(1);
+	    img.alt = domain;
+	    img.setAttribute("class", "card-img-top")
+	    
+	    
+	    img.onerror = function(){
+	      this.src = "200.png";
+	    }
 
-    card.appendChild(img);
+	    card.appendChild(img);
 
-    var body = document.createElement("div");
-    body.setAttribute("class","card-body");
-    
-    var header = document.createElement('h5');
-    header.setAttribute("class","card-title domain-title");
-    header.innerText = domain;
-    body.appendChild(header);
+	    var body = document.createElement("div");
+	    body.setAttribute("class","card-body");
+	    
+	    var header = document.createElement('h5');
+	    header.setAttribute("class","card-title domain-title");
+	    header.innerText = domain;
+	    body.appendChild(header);
 
-    var text = document.createElement('p');
-    text.setAttribute("class","card-text");
-    text.innerText = "";
-    body.appendChild(text);
-    
+	    /*var text = document.createElement('p');
+	    text.setAttribute("class","card-text");
+	    text.innerText = "";
+	    body.appendChild(text);
+	    */
 
-    var button = document.createElement("button");
-    button.setAttribute("class","btn btn-purple");
-    button.setAttribute("style","margin-left:20px;margin-right:20px;margin-bottom:20px;")
-    button.innerText = "Forget";
-    button.onclick = (function(domain){
-      return function() {
-      	var rem = domain + ";";
-      	savedData = savedData.replace(rem,"");
+	    var button = document.createElement("button");
+	    button.setAttribute("class","btn btn-purple");
+	    button.setAttribute("style","margin-bottom:5%;margin-left:5%;margin-right:5%;");
+	    button.innerText = "Forget";
+	    button.onclick = (function(domain){
+	      return function() {
+	      	var rem = domain + ";";
+	      	savedData = savedData.replace(rem,"");
 
-   	 	chrome.storage.local.set({"saved":savedData});
-   	 	location.reload();
-      }
-  	}(domain));
+	   	 	chrome.storage.local.set({"saved":savedData});
+	   	 	location.reload();
+	      }
+	  	}(domain));
 
-    card.appendChild(body);
-    card.appendChild(button);
+	    card.appendChild(body);
+	    card.appendChild(button);
 
-    cardDeck.appendChild(card);
+	    cardDeck.appendChild(card);
 
 	});
 

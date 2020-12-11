@@ -179,6 +179,7 @@ function reloadCookieTable() {
     //create main card div
     var card = document.createElement("div");
     card.setAttribute("class","card");
+      card.setAttribute("style","width:12.2rem;");
 
     var img = document.createElement('img');
     img.src = "https://logo.clearbit.com/"+ domain.substring(1);
