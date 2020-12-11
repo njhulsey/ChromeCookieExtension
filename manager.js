@@ -225,7 +225,7 @@ function reloadCookieTable() {
         lookupImage.src = "https://logo.clearbit.com/"+ cookies[0].domain.substring(1);
         lookupImage.onerror = function(){
               this.src = "200.png"
-              //this.onerror = null;
+              this.onerror = null;
         }
 
         var buttonR = document.getElementById("inputRemove");
