@@ -178,7 +178,7 @@ function reloadCookieTable() {
   
     //create main card div
     var card = document.createElement("div");
-    card.setAttribute("class","card");
+    card.setAttribute("class","card lookupstyle");
       card.setAttribute("style","width:12.2rem;");
 
     var img = document.createElement('img');
@@ -193,9 +193,7 @@ function reloadCookieTable() {
 
     var body = document.createElement("div");
     body.setAttribute("class","card-body");
-  
 
-    body.setAttribute("style","background-color:#F3F3F3;");
 
 
 
@@ -210,8 +208,8 @@ function reloadCookieTable() {
     body.appendChild(text);
 
     var button2 = document.createElement("button");
-    button2.setAttribute("class","btn");
-    button2.setAttribute("style","color:white;background-color:#3C1874;");
+    button2.setAttribute("class","btn btn-cyan");
+    //button2.setAttribute("style","color:white;background-color:#3C1874;");
     button2.innerText = "lookup";
 
     button2.onclick = (function(dom){

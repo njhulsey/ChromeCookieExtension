@@ -39,7 +39,7 @@ function onLoad(){
 
 	    //create main card div
 	    var card = document.createElement("div");
-	    card.setAttribute("class","card");
+	    card.setAttribute("class","card lookupstyle");
 	    card.setAttribute("style","width:12.2rem;");
 
 	    var img = document.createElement('img');
@@ -69,7 +69,7 @@ function onLoad(){
 	    */
 
 	    var button = document.createElement("button");
-	    button.setAttribute("class","btn btn-purple");
+	    button.setAttribute("class","btn btn-cyan");
 	    button.setAttribute("style","margin-bottom:5%;margin-left:5%;margin-right:5%;");
 	    button.innerText = "Forget";
 	    button.onclick = (function(domain){
