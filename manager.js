@@ -351,6 +351,14 @@ window.onkeydown = function(event) {
   }
 }
 
+
+var ENTER_KEY = 13;
+window.onkeydown = function(event) {
+  if (event.keyCode == ENTER_KEY) {
+        document.getElementById("cookie_focus").scrollIntoView();
+  }
+}
+
 function listener(info) {
   cache.remove(info.cookie);
   if (!info.removed) {
@@ -386,9 +394,13 @@ document.addEventListener('DOMContentLoaded', function() {
       savedData = result.saved;
       onload();
     });
-  //document.body.addEventListener('click', focusFilter);
+  //document.body.addEventListener('click', );
   document.querySelector('#filter_div input').addEventListener(
       'input', reloadCookieTable);
+
   document.querySelector('#filter_button').addEventListener(
       'click', resetFilter);
+
+  window.addEventListener('keydown',function(e){if(e.keyIdentifier=='U+000A'||e.keyIdentifier=='Enter'||e.keyCode==13){if(e.target.nodeName=='INPUT'&&e.target.type=='text'){e.preventDefault();return false;}}},true);
+
 });
