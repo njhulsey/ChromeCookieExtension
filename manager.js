@@ -101,9 +101,14 @@ var cache = new CookieCache();
 function removeAllForFilter() {
   var filter = select("#filter").value;
   var timer = new Timer();
+  var wait = true;
   cache.getDomains(filter).forEach(function(domain) {
       removeCookiesForDomain(domain);
   });
+
+
+  setTimeout(onload,150);
+
 }
 
 
@@ -364,7 +369,7 @@ function listener(info) {
   if (!info.removed) {
     cache.add(info.cookie);
   }
-  scheduleReloadCookieTable();
+  //scheduleReloadCookieTable();
 }
 
 function startListening() {
@@ -378,7 +383,7 @@ function stopListening() {
 function onload() {
   var timer = new Timer();
   chrome.cookies.getAll({}, function(cookies) {
-    //startListening();
+    startListening();
     start = new Date();
     for (var i in cookies) {
       cache.add(cookies[i]);
