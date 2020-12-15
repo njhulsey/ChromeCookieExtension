@@ -1,0 +1,16 @@
+
+How to install extension:
+> Open Chrome
+> Go to: chrome://extensions/
+> load unpacked
+> select this folder, unzipped
+
+How to open:
+Option 1:
+> Go to: chrome://extensions/
+> Details under Cookie Control Center
+> manager.html
+
+Option 2:
+> Top right of browser bar there should be a puzzle piece, Click it
+> Click the cookie Icon that should show up in drop down
